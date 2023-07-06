@@ -36,11 +36,12 @@ function App() {
      * @deprecated 权限菜单控制
      * 以下简单的示例展示管理员和普通用户的菜单渲染
      */
-    if ((token as unknown as { username: string })?.username === ADMIN) {
-      dispatch(setMenu([...MenuData.admin]));
-    } else {
-      dispatch(setMenu([...MenuData.user]));
-    }
+    dispatch(setMenu([...MenuData.admin]));
+    // if ((token as unknown as { username: string })?.username === ADMIN) {
+    //   dispatch(setMenu([...MenuData.admin]));
+    // } else {
+    //   dispatch(setMenu([...MenuData.user]));
+    // }
   }, [token]);
 
   return <AuthContext.Provider value={{ signIn, signOut }}>{element}</AuthContext.Provider>;

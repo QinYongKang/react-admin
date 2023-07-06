@@ -3,8 +3,8 @@ import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown } from '@ant-design/pro-components';
 import { Button, Dropdown, Space, Tag } from 'antd';
 import { useRef } from 'react';
-import { getGithubIssueItem } from '@/apis';
-import type { AdminApi } from '@/apis';
+import { getGithubIssueItem } from '@/apis/admin';
+import type { AdminApi } from '@/apis/admin/typing';
 
 const columns: ProColumns<AdminApi.GithubIssueItem>[] = [
   {

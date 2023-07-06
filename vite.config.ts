@@ -1,11 +1,14 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import vitePluginCompression from 'vite-plugin-compression';
 import { resolve } from 'path';
 
 const baseUrl = 'react-admin-template';
 
 export default defineConfig((config) => {
+  const root = process.cwd()
+  const env = loadEnv(config.mode, root)
+  console.log('env==>', env)
   return {
     plugins: [
       react(),
@@ -24,7 +27,7 @@ export default defineConfig((config) => {
       port: 5793,
       proxy: {
         '/api': {
-          target: 'http://localhost:8080',
+          target: "http://127.0.0.1:7001",
           secure: false,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },

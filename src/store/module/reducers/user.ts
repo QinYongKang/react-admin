@@ -8,6 +8,7 @@ export interface IUserInitialState {
   role: string[];
   token: string;
   menu: any[];
+  perms: string[];
   [key: string]: any;
 }
 
@@ -19,6 +20,7 @@ const initialState: IUserInitialState = {
   role: [],
   token: getStorage(TOKEN) ?? '',
   menu: [],
+  perms: [],
 };
 
 export const userSlice = createSlice({
